@@ -241,7 +241,7 @@ function! RangeCommentLine()
   let file_name = buffer_name("%")
 
   " for .cpp or .hpp or .java or .C files use //
-  if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$' || file_name =~ '\.nc$' || file_name =~'\.cu$' || file_name =~ '\.ino$' || file_name =~ '\.pde$' || file_name =~ '\.go$'
+  if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$' || file_name =~ '\.nc$' || file_name =~ '\.cu$' || file_name =~ '\.ino$' || file_name =~ '\.pde$' || file_name =~ '\.go$'
     execute ":silent! normal :s/\\S/\\/\\/\\0/\<CR>:nohlsearch<CR>=="
   " for .c or .h or .pc or .css files use /* */
   elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$'
@@ -309,7 +309,7 @@ function! RangeUnCommentLine()
   let file_name = buffer_name("%")
 
   " for .cpp or .hpp or .java files use //
-  if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$' ||  file_name =~ '\.nc$' || file_name =~'\.cu$' || file_name =~ '\.ino$' || file_name =~ '\.pde$' || file_name =~ '\.go$'
+  if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$' ||  file_name =~ '\.nc$' || file_name =~ '\.cu$' || file_name =~ '\.ino$' || file_name =~ '\.pde$' || file_name =~ '\.go$'
     execute ":silent! normal :s/\\/\\///\<CR>:nohlsearch\<CR>=="
   " for .c or .h or .pc or .css files use /* */
   elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$'
