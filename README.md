@@ -11,7 +11,7 @@ The following are the changes that I have done to the original Plugin
 - Added support for remapping the keys if needed
 - Added support for Clojure and ClojureScript (by [seedano](https://github.com/ssedano/))
 - Added support for Matlab and Octave (.m) files
-- Added support for IDL (.pro) files (by [mathomp4])
+- Added support for IDL (.pro) files (by [mathomp4](https://github.com/mathomp4))
 
 Credit goes to the original author Jasmeet Singh Anand.
 
