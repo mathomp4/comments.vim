@@ -20,6 +20,10 @@
 " *********************************************************************************************
  "Modification:
 " *********************************************************************************************
+" Matt Thompson 13 April 2017
+" Added support for IDL (*.pro) files
+" *********************************************************************************************
+" *********************************************************************************************
 " Sudar Muthu (http://sudarmuthu.com) 28th November, 2012 
 " Added support for Matlab and Octave (*.m) files
 " *********************************************************************************************
@@ -182,6 +186,9 @@ function! CommentLine()
   " for .clj or .cljs files use ;
   elseif file_name =~ '\.clj$' || file_name =~ '\.cljs$'
     execute ":silent! normal ^i;; \<ESC>\<down>"
+  " for .pro IDL files use !
+  elseif file_name =~ '\.pro$' 
+    execute ":silent! normal ^i;\<ESC>\<down>^"
   " for all other files use # 
   else
     execute ":silent! normal ^i#\<ESC>\<down>^"
@@ -230,6 +237,9 @@ function! UnCommentLine()
   " for .clj or .cljs
   elseif file_name =~ '\.clj$' || file_name =~ '\.cljs$'
       execute ":silent! normal :nohlsearch\<CR>:s/;; //\<CR>:nohlsearch\<CR>=="
+  " for .pro IDL files use !
+  elseif file_name =~ '\.pro$' 
+    execute ":silent! normal :nohlsearch\<CR>:s/;//\<CR>:nohlsearch\<CR>"
   " for all other files use # 
   else
     execute ":silent! normal :nohlsearch\<CR>:s/\\#//\<CR>:nohlsearch\<CR>"
@@ -298,6 +308,9 @@ function! RangeCommentLine()
   " for .clj and .cljs files use ;
   elseif file_name =~ '\.clj$' || file_name =~ '\cljs.$'
     execute ":silent! normal ^gI;; \<ESC>\<down>^"
+  " for .pro IDL files use !
+  elseif file_name =~ '\.pro$' 
+    execute ":silent! normal :s/\\S/;\\0/\<CR>:nohlsearch<CR>"
   " for all other files use #  
   else
     execute ":silent! normal :s/\\S/\\#\\0/\<CR>:nohlsearch<CR>"
@@ -345,6 +358,9 @@ function! RangeUnCommentLine()
   " for .clj and .cljs files use ;
   elseif file_name =~ '\.clj$' || file_name =~ '\.cljs$'
     execute ":silent! normal :s/;; //\<CR>:nohlsearch\<CR>"
+  " for .pro IDL files use !
+  elseif file_name =~ '\.pro$'
+    execute ":silent! normal :s/;//\<CR>:nohlsearch\<CR>"
   " for all other files use # 
   else
     execute ":silent! normal :s/\\#//\<CR>:nohlsearch\<CR>"
