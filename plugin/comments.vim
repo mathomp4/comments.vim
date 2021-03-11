@@ -231,8 +231,8 @@ function! UnCommentLine()
   " for fortran 90/95 files use !
   elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$'
     execute ":silent! normal :nohlsearch\<CR>:s/!//\<CR>:nohlsearch\<CR>"
-  " for VHDL and Haskell files use --
-  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$'
+  " for VHDL and Haskell and Lua files use --
+  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua$'
     execute ":silent! normal :nohlsearch\<CR>:s/-- //\<CR>:nohlsearch\<CR>"
   " for .clj or .cljs
   elseif file_name =~ '\.clj$' || file_name =~ '\.cljs$'
