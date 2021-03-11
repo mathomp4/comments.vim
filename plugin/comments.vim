@@ -180,8 +180,8 @@ function! CommentLine()
   " for fortran 90/95 files use !
   elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$' || file_name =~ '\.pf$'
     execute ":silent! normal ^i!\<ESC>\<down>^"
-  " for VHDL and Haskell files use -- 
-  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$'
+  " for VHDL and Haskell and Lua files use -- 
+  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua$'
     execute ":silent! normal ^gI-- \<ESC>\<down>^"
   " for .clj or .cljs files use ;
   elseif file_name =~ '\.clj$' || file_name =~ '\.cljs$'
@@ -229,7 +229,7 @@ function! UnCommentLine()
   elseif file_name =~ '\.f$' || file_name =~ '\.F$'
     execute ":silent! normal ^x\<ESC>\<down>^"
   " for fortran 90/95 files use !
-  elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$'
+  elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$' || file_name =~ '\.pf$'
     execute ":silent! normal :nohlsearch\<CR>:s/!//\<CR>:nohlsearch\<CR>"
   " for VHDL and Haskell and Lua files use --
   elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua$'
