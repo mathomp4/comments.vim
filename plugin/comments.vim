@@ -303,7 +303,7 @@ function! RangeCommentLine()
   elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$'
     execute ":silent! normal :s/\\S/!\\0/\<CR>:nohlsearch<CR>"
   " for VHDL and Haskell files use --
-  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$'
+  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua$'
     execute ":silent! normal ^gI-- \<ESC>\<down>^"
   " for .clj and .cljs files use ;
   elseif file_name =~ '\.clj$' || file_name =~ '\cljs.$'
@@ -353,7 +353,7 @@ function! RangeUnCommentLine()
   elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$'
     execute ":silent! normal :s/!//\<CR>:nohlsearch\<CR>"
   " for VHDL and Haskell files use --
-  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$'
+  elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua'
     execute ":silent! normal :s/-- //\<CR>:nohlsearch\<CR>"
   " for .clj and .cljs files use ;
   elseif file_name =~ '\.clj$' || file_name =~ '\.cljs$'
