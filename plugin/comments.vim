@@ -300,7 +300,7 @@ function! RangeCommentLine()
   elseif file_name =~ '\.f$' || file_name =~ '\.F$'
     execute ":silent! normal ^gIC\<ESC>\<down>^"
   " for fortran 90/95 files use !
-  elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$'
+  elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$' || file_name =~ '\.pf$'
     execute ":silent! normal :s/\\S/!\\0/\<CR>:nohlsearch<CR>"
   " for VHDL and Haskell files use --
   elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua$'
@@ -350,7 +350,7 @@ function! RangeUnCommentLine()
   elseif file_name =~ '\.f$' || file_name =~ '\.F$'
     execute ":silent! normal ^x\<ESC>\<down>^"
   " for fortran 90/95 files use !
-  elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$'
+  elseif file_name =~ '\.f90$' || file_name =~ '\.F90$' || file_name =~ '\.f95$' || file_name =~ '\.F95$' || file_name =~ '\.P90$' || file_name =~ '\.pf$'
     execute ":silent! normal :s/!//\<CR>:nohlsearch\<CR>"
   " for VHDL and Haskell files use --
   elseif file_name =~ '\.vhd$' || file_name =~ '\.vhdl$' || file_name =~ '\.hs$' || file_name =~ '\.lua'
